@@ -17,5 +17,14 @@ else:
     print("This episode is not suitable for you")  
 
 
-    
-      
+
+# import json
+# json_data = '{"name":"Alice","age":25,"isstudent":true}'
+
+# python_data = json.load(json_data)
+
+# print(python_data)
+# print(python_data["name"])
+
+
+

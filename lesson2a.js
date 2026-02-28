@@ -22,7 +22,7 @@ console.log(typeof (person)); // object
 // Array data type:
 // This refers to a collection of items that are on indexes
 let fruits = ["Mango", "Pineapple", "Apple", "Banana","Melon","Lemon","Grapes"]
-
+fruits.unshift("Strawberry") 
 console.log("The entire array of fruits is: ", fruits);
 
 // To access the items of an array we use the index
