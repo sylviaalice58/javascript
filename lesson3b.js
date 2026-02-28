@@ -34,9 +34,26 @@ const users = [
 const userNames = users.map(user => user.name);
 console.log(userNames);
 // Output: ["Andrew", "Bob", "Charlie"]
-
+ 
+console.log("=====================")
 // assignment page 30
 // Task: Write a for loop to print all odd numbers from 1 to 19.
 
+let num =1;
 
+while(num <= 19){
+    if (num % 2 !==0){
+        console.log("The odd number is: ", num)
+    }
+    num++;
+}
 
+console.log("=====================")
+
+// Task: Write a for loop to count down from 10 to 1 and print the numbers in the console.
+
+let count = 10;while(count >= 1){
+    console.log( count);
+    count--;
+}
+console.log("=====================")
