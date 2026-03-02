@@ -1,0 +1,114 @@
+1️⃣ Arrow Functions in JavaScript
+
+Arrow functions were introduced in ES6 (ECMAScript 2015) to make writing functions shorter and cleaner.
+
+✅ Basic Syntax
+Normal Function
+function greet(name) {
+    return "Hello " + name;
+}
+
+Arrow Function
+const greet = (name) => {
+    return "Hello " + name;
+}
+Even Shorter (Implicit Return)
+
+If there is only one line:
+
+const greet = name => "Hello " + name;
+✅ Arrow Function with No Parameters
+const sayHi = () => {
+    console.log("Hi!");
+}
+✅ Arrow Function with Multiple Parameters
+const add = (a, b) => a + b;
+
+console.log(add(5, 3));  // 8
+⭐ Special Characteristics of Arrow Functions
+1️⃣ Shorter Syntax
+
+They reduce code length.
+
+2️⃣ No this Binding
+
+Arrow functions do NOT have their own this.
+They inherit this from their surrounding scope.
+
+Example:
+
+const person = {
+    name: "Sylvia",
+    greet: function() {
+        setTimeout(() => {
+            console.log("Hello " + this.name);
+        }, 1000);
+    }
+};
+
+person.greet();
+
+Here, the arrow function keeps the correct this.
+
+❌ When NOT to Use Arrow Functions
+
+In object methods (sometimes)
+
+As constructors (you cannot use new with arrow functions)
+
+When you need your own this
+
+2️⃣ Functions with Parameters in JavaScript
+
+A parameter is a variable inside the function definition.
+An argument is the actual value passed when calling the function.
+
+✅ Example
+function multiply(a, b) {   // a and b are parameters
+    return a * b;
+}
+
+console.log(multiply(4, 5));  // 4 and 5 are arguments
+✅ Default Parameters
+function greet(name = "Guest") {
+    return "Hello " + name;
+}
+
+console.log(greet());        // Hello Guest
+console.log(greet("Alice")); // Hello Alice
+✅ Rest Parameters
+
+Used when you don’t know how many arguments will be passed.
+
+function sum(...numbers) {
+    let total = 0;
+    for (let num of numbers) {
+        total += num;
+    }
+    return total;
+}
+
+console.log(sum(1, 2, 3, 4));  // 10
+3️⃣ Anonymous Functions in JavaScript
+
+An anonymous function is a function without a name.
+
+✅ Example
+const greet = function(name) {
+    return "Hello " + name;
+};
+
+This function has no name, but it is stored inside the variable greet.
+
+✅ Anonymous Function as Callback
+
+Very common in JavaScript:
+
+setTimeout(function() {
+    console.log("This runs after 2 seconds");
+}, 2000);
+
+✅ Anonymous Arrow Function
+setTimeout(() => {
+    console.log("Arrow function example");
+}, 2000);
