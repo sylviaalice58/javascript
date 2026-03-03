@@ -112,3 +112,112 @@ setTimeout(function() {
 setTimeout(() => {
     console.log("Arrow function example");
 }, 2000);
+
+
+
+
+
+
+
+📦 Modules in JavaScript
+
+A module in JavaScript is simply a file that contains code (variables, functions, classes) that can be exported and imported into another file.
+
+Modules help you:
+
+Organize code
+
+Avoid global variables
+
+Reuse code
+
+Make large projects manageable
+
+Since you're learning JS step by step, this is a very important concept when building real projects.
+
+1️⃣ Why Modules Are Important
+
+Before modules:
+
+// Everything is global 😬
+let name = "Sylvia";
+function greet() {
+    console.log("Hello " + name);
+}
+
+If your project grows, global variables can clash.
+
+Modules solve this by keeping code private by default.
+
+2️⃣ ES6 Modules (Modern JavaScript Way)
+
+JavaScript uses:
+
+export → to share code
+
+import → to use shared code
+
+🧩 Example 1: Named Export
+📁 math.js
+export function add(a, b) {
+    return a + b;
+}
+
+export function multiply(a, b) {
+    return a * b;
+}
+📁 main.js
+import { add, multiply } from './math.js';
+
+console.log(add(5, 3));       // 8
+console.log(multiply(5, 3));  // 15
+
+✔ Notice the { } — used for named exports.
+
+🧩 Example 2: Default Export
+📁 greet.js
+export default function greet(name) {
+    return "Hello " + name;
+}
+📁 main.js
+import greet from './greet.js';
+
+console.log(greet("Sylvia"));
+
+✔ No { } when importing default export.
+
+3️⃣ Using Modules in HTML
+
+When working in the browser:
+
+<script type="module" src="main.js"></script>
+
+⚠ Important: Must use type="module".
+
+4️⃣ CommonJS (Older Node.js Style)
+
+Used mostly in Node.js before ES6 modules:
+
+// Export
+module.exports = add;
+
+// Import
+const add = require('./math');
+
+Modern projects now prefer ES6 modules.
+
+5️⃣ Real-Life Example
+
+Imagine you are building:
+
+payment.js → handles payments
+
+auth.js → handles login/signup
+
+database.js → handles DB connection
+
+app.js → main file
+
+Each file is a module.
+
+This is very useful especially since you've been working with Flask APIs and backend logic — JavaScript backend (Node.js) works the same modular way.
